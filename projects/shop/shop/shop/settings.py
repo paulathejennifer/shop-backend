@@ -122,6 +122,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# Optional if you want to serve extra static dirs outside apps
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',   # if you have a global static folder
+]
+
+
 STATIC_URL = 'static/'
 
 # Default primary key field type

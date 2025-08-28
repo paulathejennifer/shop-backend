@@ -15,19 +15,6 @@ class Tag(models.Model):
 class User(models.Model):
     name = models.CharField(max_length = 28)
 
-
-# class Product(models.Model):
-#     name = models.CharField(max_length=50)
-#     stock = models.IntegerField()
-#     price = models.DecimalField(decimal_places=2, max_digits=6)
-#     description = models.TextField()
-   
-#     tags=models.ManyToManyField(Tag, blank = True)
-
-#     def __str__(self):
-#         return self.name
-
-
 class Membership(models.Model):
     user =models.ForeignKey(User, on_delete = models.PROTECT)
 

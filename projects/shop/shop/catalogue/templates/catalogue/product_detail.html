@@ -1,0 +1,23 @@
+{% extends "catalogue/base.html" %}
+{% block content %}
+
+<div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
+    <h1 class="text-4xl font-bold mb-4 text-gray-800">{{ product.name }}</h1>
+
+    <p class="text-gray-600 mb-6">{{ product.description }}</p>
+
+    <p class="text-xl text-blue-700 font-semibold mb-6">Price: ${{ product.price }}</p>
+
+    <a href="{% url 'catalogue:product_list' %}" class="inline-block mb-6 text-blue-600 hover:underline">
+        &larr; Back to Product List
+    </a>
+
+    <form action="{% url 'catalogue:add_to_cart' product.id %}" method="post" class="mt-4">
+        {% csrf_token %}
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Add to Cart
+        </button>
+    </form>
+</div>
+
+{% endblock %}
